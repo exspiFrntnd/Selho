@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог продуктов</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="menu-container"></div>
+    </header>
+
+    <div class="content">
+      <h2>Каталог продуктов</h2>
+
+      <form id="filter-form" class="filter-form">
+        <div>
+          <label
+            for="classification_id"
+            style="font-size: 14px; font-weight: 600; display: block"
+            >Фильтр по категории:</label
+          >
+          <select id="classification_id">
+            <option value="">Все категории</option>
+            <option value="Сыры">Сыры</option>
+            <option value="Молочная продукция">Молочная продукция</option>
+            <option value="Мясо">Мясо</option>
+            <option value="Яйца">Яйца</option>
+          </select>
+        </div>
+        <div>
+          <label
+            for="search"
+            style="font-size: 14px; font-weight: 600; display: block"
+            >Поиск по названию:</label
+          >
+          <input
+            type="text"
+            id="search"
+            placeholder="Например: Кочотта, молоко..."
+            style="width: 200px"
+          />
+        </div>
+        <div style="margin-top: 10px">
+          <button
+            type="button"
+            class="buy-ticket-btn"
+            onclick="renderCatalog()"
+          >
+            Применить
+          </button>
+        </div>
+      </form>
+
+      <div id="catalog-list" class="products-list"></div>
+    </div>
+
+    <footer>
+      <p>
+        г. Барнаул, ул. Братьев Долговых, д. 1А <br />
+        +7 (960) 966-71-04
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="menu-container"></div>
+    </header>
+
+    <div class="content-wrapper">
+      <div class="container-auth">
+        <div class="reg" style="border: 2px solid #333; max-width: 600px">
+          <h3>Личный кабинет</h3>
+          <p><strong>Имя:</strong> <span id="cabinet-name">—</span></p>
+          <p><strong>Email:</strong> <span id="cabinet-email">—</span></p>
+          <p><strong>Телефон:</strong> <span id="cabinet-phone">—</span></p>
+          <p><strong>Возраст:</strong> <span id="cabinet-age">—</span></p>
+          <p class="small-text">
+            Дата регистрации: <span id="cabinet-regdate">—</span>
+          </p>
+
+          <div
+            id="admin-block"
+            style="
+              margin: 15px 0;
+              padding: 10px;
+              background: #fff3cd;
+              border: 1px solid #ffeeba;
+              border-radius: 5px;
+              display: none;
+            "
+          >
+            <strong>Вы администратор!</strong><br />
+            <a
+              href="admin.html"
+              style="color: #856404; text-decoration: underline"
+              >Перейти в панель управления</a
+            >
+          </div>
+
+          <div class="lk-scroll-container">
+            <hr />
+            <h4>Корзина</h4>
+            <div id="cart-items"></div>
+
+            <form id="order-form" style="margin-top: 10px">
+              <p><strong>Комментарий к заказу</strong></p>
+              <textarea
+                id="order-comment"
+                style="width: 100%; height: 70px; border-radius: 6px"
+              ></textarea>
+              <button
+                type="submit"
+                class="buy-ticket-btn"
+                style="margin-top: 10px"
+              >
+                Оформить заказ
+              </button>
+            </form>
+
+            <hr />
+            <h4>Мои заказы</h4>
+            <div id="orders-list"></div>
+          </div>
+
+          <div style="margin-top: 30px; text-align: center">
+            <a
+              href="#"
+              id="logout-btn"
+              class="buy-ticket-btn"
+              style="display: inline-block; text-decoration: none"
+            >
+              Выйти из аккаунта
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        г. Барнаул, ул. Братьев Долговых, д. 1А <br />
+        +7 (960) 966-71-04
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

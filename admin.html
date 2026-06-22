@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Панель администратора</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="menu-container"></div>
+    </header>
+
+    <div class="content">
+      <h2>Панель администратора</h2>
+
+      <h3>Товары</h3>
+      <form
+        id="add-product-form"
+        style="
+          margin-bottom: 20px;
+          border: 1px solid #ddd;
+          padding: 15px;
+          border-radius: 8px;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          align-items: end;
+        "
+      >
+        <input
+          type="text"
+          id="add-name"
+          placeholder="Название"
+          required
+          style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc"
+        />
+        <input
+          type="number"
+          id="add-quantity"
+          placeholder="Количество"
+          required
+          style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc"
+        />
+        <input
+          type="number"
+          step="0.01"
+          id="add-price"
+          placeholder="Цена"
+          required
+          style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc"
+        />
+        <input
+          type="text"
+          id="add-image"
+          placeholder="image_url"
+          style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc"
+        />
+        <select
+          id="add-classification"
+          style="padding: 6px 10px; border-radius: 6px; border: 1px solid #ccc"
+        >
+          <option value="Сыры">Сыры</option>
+          <option value="Молочная продукция">Молочная продукция</option>
+          <option value="Мясо">Мясо</option>
+          <option value="Яйца">Яйца</option>
+        </select>
+        <button type="submit" class="buy-ticket-btn">Добавить товар</button>
+      </form>
+
+      <div id="admin-products"></div>
+
+      <h3>Заказы</h3>
+      <div id="admin-orders"></div>
+    </div>
+
+    <footer>
+      <p>
+        г. Барнаул, ул. Братьев Долговых, д. 1А <br />
+        +7 (960) 966-71-04
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      document
+        .getElementById("add-product-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("add-name").value;
+          const quantity = document.getElementById("add-quantity").value;
+          const price = document.getElementById("add-price").value;
+          const image = document.getElementById("add-image").value;
+          const classification =
+            document.getElementById("add-classification").value;
+          if (name && quantity && price) {
+            addProduct(name, quantity, price, image, classification);
+            alert("Товар добавлен!");
+            renderAdmin();
+            this.reset();
+          } else {
+            alert("Заполните обязательные поля (название, количество, цена).");
+          }
+        });
+    </script>
+  </body>
+</html>
